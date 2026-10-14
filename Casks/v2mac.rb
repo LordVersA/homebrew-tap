@@ -13,14 +13,13 @@ cask "v2mac" do
   end
 
   depends_on arch: :arm64
-  depends_on macos: ">= :tahoe"
+  depends_on macos: :tahoe
 
   app "V2Mac.app"
 
   # The app is ad-hoc signed and not notarized, so Gatekeeper would block the first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/V2Mac.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/V2Mac.app"]
   end
 
   uninstall quit: "io.github.lordversa.v2mac"
