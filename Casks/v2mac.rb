@@ -16,6 +16,7 @@ cask "v2mac" do
   depends_on macos: :tahoe
 
   app "V2Mac.app"
+  binary "V2Mac.app/Contents/Helpers/v2mac"
 
   # The app is ad-hoc signed and not notarized, so Gatekeeper would block the first launch.
   postflight_steps do
