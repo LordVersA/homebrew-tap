@@ -1,6 +1,6 @@
 # CLAUDE.md (homebrew-tap)
 
-Homebrew tap for V2Mac: `brew install --cask lordversa/tap/v2mac`, cask in `Casks/v2mac.rb`.
+Homebrew tap for V2Mac: `brew install --cask v2macapp/tap/v2mac`, cask in `Casks/v2mac.rb`.
 
 - The app's release CI (`../app/.github/workflows/release.yml`, `TAP_TOKEN` secret) bumps `version`
   and `sha256` after every release. Don't change them by hand.
